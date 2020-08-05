@@ -1,9 +1,10 @@
 class Event 
-  attr_reader :name, :food_trucks
+  attr_reader :name, :food_trucks, :date
 
   def initialize(name)
     @name = name
     @food_trucks = []
+    @date = Date.today
   end
 
   def add_food_truck(food_truck)
@@ -46,5 +47,9 @@ class Event
     total_inventory.select do |key, value|
       value[:quantity] > 50 && value[:food_trucks].size > 1
     end.keys
+  end
+  
+  def date
+    @date.strftime("%e/%m/%Y")
   end
 end
