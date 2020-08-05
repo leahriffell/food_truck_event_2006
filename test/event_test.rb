@@ -87,6 +87,6 @@ class EventTest <  Minitest::Test
   end
 
   def test_it_can_identify_overstocked_items 
-    assert_equal @item1, @event.overstocked_items
+    assert_equal [@item1], @event.overstocked_items
   end
 end
