@@ -28,4 +28,10 @@ class FoodTruckTest <  Minitest::Test
     @food_truck.stock(@item2, 12)
     assert_equal ({@item1 => 55, @item2 => 12}), @food_truck.inventory 
   end
+
+  def test_it_can_calculate_its_potential_revenue 
+    assert_equal 148.75, @food_truck1.potential_revenue
+    assert_equal 345.00, @food_truck2.potential_revenue
+    assert_equal 243.75, @food_truck3.potential_revenue
+  end
 end
