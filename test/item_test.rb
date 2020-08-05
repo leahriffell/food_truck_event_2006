@@ -11,6 +11,6 @@ class ItemTest <  Minitest::Test
   def test_it_exists_and_has_readable_attributes
     assert_instance_of Item, @item1
     assert_equal "Apple Pie (Slice)", @item2.name 
-    assert_equal 2.50, @item.price
+    assert_equal 2.50, @item2.price
   end
 end
