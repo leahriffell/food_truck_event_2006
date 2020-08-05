@@ -3,6 +3,7 @@ require 'minitest/pride'
 require './lib/item'
 require './lib/food_truck'
 require './lib/event'
+require 'date'
 
 class EventTest <  Minitest::Test
   def setup 
@@ -88,5 +89,9 @@ class EventTest <  Minitest::Test
 
   def test_it_can_identify_overstocked_items 
     assert_equal [@item1], @event.overstocked_items
+  end
+
+  def test_it_can_return_its_creation_date
+    assert_equal "24/02/2020", @event.date
   end
 end
