@@ -55,8 +55,8 @@ class EventTest <  Minitest::Test
     assert_equal [@food_truck2], @event.food_trucks_that_sell(@item4)
   end
   
-  def test_it_can_get_all_items_sold 
-    assert_equal [@item1, @item2, @item4, @item3], @event.items
+  def test_it_can_get_all_items_in_stock
+    assert_equal [@item1, @item2, @item4, @item3], @event.items_in_stock
   end
 
   def test_it_can_get_its_total_inventory
@@ -84,7 +84,6 @@ class EventTest <  Minitest::Test
   end
 
   def test_it_can_return_sorted_list_of_all_items_sold
-    skip
     assert_equal  ["Apple Pie (Slice)", "Banana Nice Cream", "Peach Pie (Slice)", "Peach-Raspberry Nice Cream"], @event.sorted_item_list
   end
 
