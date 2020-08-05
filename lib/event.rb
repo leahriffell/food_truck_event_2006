@@ -14,7 +14,24 @@ class Event
     @food_trucks.map { |truck| truck.name }
   end
 
+  def items 
+    items = []
+    @food_trucks.map do |truck|
+      truck.inventory.map do |inventory|  
+        items << inventory[0]
+      end
+    end.flatten
+    items.uniq
+  end
+
   def food_trucks_that_sell(item)
     @food_trucks.select { |truck| truck.inventory.include?(item) }
   end
+
+  # def sorted_item_list
+  #   @food_trucks.map do |truck|
+  #     truck.inventory.map do |inventory|  
+  #       inventory.name|
+  #   end
+  # end
 end

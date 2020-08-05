@@ -54,8 +54,13 @@ class EventTest <  Minitest::Test
 
     assert_equal [@food_truck2], @event.food_trucks_that_sell(@item4)
   end
+  
+  def test_it_can_get_all_items_sold 
+    assert_equal [@item1, @item2, @item4, @item3], @event.items
+  end
 
   def test_it_can_get_its_total_inventory
+    skip
     breakdown = {
         @item => {
         quantity: 100,
