@@ -31,4 +31,14 @@ class Event
   def sorted_item_list
     items_in_stock.map { |item| item.name }.sort
   end
+
+  def total_inventory
+    items_in_stock.reduce({}) do |result, item|
+      result[item] = {
+        quantity: @food_trucks.sum {|truck| truck.check_stock(item)},
+        food_trucks: food_trucks_that_sell(item)
+      }
+      result
+    end
+  end
 end
