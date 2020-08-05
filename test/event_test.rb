@@ -54,4 +54,16 @@ class EventTest <  Minitest::Test
 
     assert_equal [@food_truck2], @event.food_trucks_that_sell(@item4)
   end
+
+  def test_it_can_return_sorted_list_of_all_items_sold
+    assert_equal  ["Apple Pie (Slice)", "Banana Nice Cream", "Peach Pie (Slice)", "Peach-Raspberry Nice Cream"], @event.sorted_item_list
+  end
+
+  # Additionally, your `Event` class should have a method called `total_inventory` that reports the quantities of all items sold at the event. Specifically, it should return a hash with items as keys and hash as values - this sub-hash should have two key/value pairs: quantity pointing to total inventory for that item and food_trucks pointing to an array of the food trucks that sell that item.
+
+  # You `Event` will also be able to identify `overstocked_items`.  An item is overstocked if it is sold by more than 1 food truck AND the total quantity is greater than 50.
+
+  # Add a method to your `Event` class called `sorted_item_list` that returns a list of names of all items the FoodTrucks have in stock, sorted alphabetically. This list should not include any duplicate items.
+
+
 end
