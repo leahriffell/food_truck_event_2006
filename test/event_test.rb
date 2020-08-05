@@ -23,6 +23,7 @@ class EventTest <  Minitest::Test
 
     @food_truck3 = FoodTruck.new("Palisade Peach Shack")    
     @food_truck3.stock(@item1, 65)  
+    @food_truck3.stock(@item3, 10)    
 
     @event.add_food_truck(@food_truck1)    
     @event.add_food_truck(@food_truck2)    
