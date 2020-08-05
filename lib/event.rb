@@ -52,4 +52,13 @@ class Event
   def date
     @date.strftime("%e/%m/%Y")
   end
+
+  def sell(item, quantity)
+    if total_inventory[item] == nil
+      # require 'pry'; binding.pry
+      false 
+    else 
+      total_inventory[item][:quantity] >= quantity
+    end
+  end
 end

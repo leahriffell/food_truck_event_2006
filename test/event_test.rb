@@ -103,7 +103,7 @@ class EventTest <  Minitest::Test
     # this sepc doesn't have item3 added to foodtruck 3 so removing it here 
     @food_truck3.stock(@item3, -10)    
 
-    assert false, @event.sell(@item1, 200)
+    assert_equal false, @event.sell(@item1, 200)
     assert false, @event.sell(@item5, 1)
     assert @event.sell(@item4, 5)
   end
