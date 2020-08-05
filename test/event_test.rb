@@ -86,5 +86,7 @@ class EventTest <  Minitest::Test
     assert_equal breakdown, @event.total_inventory 
   end
 
-  # You `Event` will also be able to identify `overstocked_items`.  An item is overstocked if it is sold by more than 1 food truck AND the total quantity is greater than 50.
+  def test_it_can_identify_overstocked_items 
+    assert_equal @item1, @event.overstocked_items
+  end
 end
